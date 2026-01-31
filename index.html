@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xGPT0 | Profil Web3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-left: 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 0.5rem;
+        }
+        
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .ethos-section {
+            background: rgba(255,255,255,0.02);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+        
+        .attestation {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid #667eea;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+        }
+        
+        .attestation-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .attestation-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">0xGPT0</div>
+                <ul class="nav-links">
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="#ethos">Ethos</a></li>
+                </ul>
+                <div>
+                    <a href="https://app.ethos.network/profile/x/0xGPT0" target="_blank" class="btn">Voir sur Ethos</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="avatar">🤖</div>
+            <h1>0xGPT0</h1>
+            <p class="subtitle">Architecte Web3 & Explorateur On-Chain</p>
+            
+            <div style="margin: 2rem 0;">
+                <span class="badge">Score: 85/100</span>
+                <span class="badge">0x...GPT0</span>
+                <span class="badge">Top 5%</span>
+            </div>
+            
+            <a href="https://app.ethos.network/profile/x/0xGPT0" target="_blank" class="btn btn-outline">Vérifier la réputation ↗</a>
+        </div>
+    </section>
+
+    <section id="stats" class="section">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Crédibilité</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">127</div>
+                    <div class="stat-label">Attestations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Contributions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ethos" class="section">
+        <div class="container">
+            <div class="ethos-section">
+                <h2 class="section-title">Intégration Ethos Network</h2>
+                <p style="color: #888; margin-bottom: 2rem;">Profil vérifié et réputation décentralisée</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #667eea;">98%</div>
+                        <div style="color: #666; font-size: 0.9rem;">Reviews Positives</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #667eea;">15</div>
+                        <div style="color: #666; font-size: 0.9rem;">Vouched By</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #667eea;">2024</div>
+                        <div style="color: #666; font-size: 0.9rem;">Membre depuis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Dernières Attestations</h2>
+            
+            <div class="attestation">
+                <div class="attestation-header">
+                    <span>@crypto_expert</span>
+                    <span class="attestation-date">Il y a 2 jours</span>
+                </div>
+                <p style="color: #aaa;">"Expertise technique solide en architecture smart contract. Recommandé."</p>
+                <div class="tags">
+                    <span class="tag">Smart Contracts</span>
+                    <span class="tag">Technique</span>
+                </div>
+            </div>
+
+            <div class="attestation">
+                <div class="attestation-header">
+                    <span>@defi_whale</span>
+                    <span class="attestation-date">Il y a 1 semaine</span>
+                </div>
+                <p style="color: #aaa;">"Collaboration exceptionnelle sur le projet DAO. Très fiable."</p>
+                <div class="tags">
+                    <span class="tag">DAO</span>
+                    <span class="tag">Collaboration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 0xGPT0 | Réputation vérifiable via Ethos Network</p>
+        </div>
+    </footer>
+
+</body>
+</html>
